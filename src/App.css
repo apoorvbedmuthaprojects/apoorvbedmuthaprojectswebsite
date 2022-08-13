@@ -1,38 +1,496 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Raleway:wght@300;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,800&family=Raleway:wght@300;600;700&display=swap');
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+a {
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App_backgroundVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.primaryFont {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 400;
+    color: white
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App_content {
+    position: relative;
+    color: #FFFFFF;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    width: 100%;
+    height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.App_Title {
+
+    animation: mymove 7s forwards;
+    animation-delay: 0s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes mymove {
+    0% {
+        padding-top: 40vh;
+        padding-left: 35vw;
+        font-size: 7vh;
+    }
+
+    50% {
+        padding-top: 40vh;
+        padding-left: 35vw;
+        font-size: 7vh;
+    }
+
+    100% {
+        padding-top: 3vh;
+        padding-left: 2.8vw;
+        font-size: 3.7vh;
+    }
+}
+
+.App_Menu {
+    position: relative;
+    left: -50vw;
+    display: flex;
+    flex-direction: column;
+    height: 64vh;
+    cursor: pointer;
+    justify-content: space-between;
+    animation: menuanim 3s forwards;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3vh;
+    line-height: 31px;
+    letter-spacing: 0.42em;
+    animation-delay: 7s;
+
+}
+
+@keyframes menuanim {
+    0% {
+        left: -50vw;
+    }
+
+    100% {
+        left: 2.8vw;
+    }
+}
+
+.App_Row {
+    display: flex;
+    padding-top: 9vh;
+    justify-content: space-between;
+
+}
+
+.App_dots {
+    display: flex;
+    flex-direction: column;
+    height: 63vh;
+    justify-content: space-between;
+    align-items: center;
+    animation: dotsanimation 7s forwards;
+    animation-delay: 13s;
+    position: absolute;
+    top: -900px;
+}
+
+@keyframes dotsanimation {
+    0% {
+        position: absolute;
+
+    }
+
+    100% {
+        position: relative;
+        top: 0%
+    }
+}
+
+.App_dot {
+    height: 0.5vw;
+    width: 0.5vw;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+
+.App_details {
+    width: 39vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    animation: detailsanim 5s forwards;
+    animation-delay: 10s;
+    padding-left: 100vw;
+}
+
+@keyframes detailsanim {
+    0% {}
+
+    100% {
+        padding-left: 0vw;
+        padding-right: 2.8vw;
+    }
+}
+
+.Details_Head {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.6vh;
+    letter-spacing: 0.06em;
+    padding-top: 1vh;
+    width: 40vw;
+}
+
+.Details_Title {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 6.6vh;
+    line-height: 66px;
+    letter-spacing: 0.06em;
+    padding-top: 1vh;
+}
+
+.Details_Brief {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3vh;
+    line-height: 31px;
+    letter-spacing: 0.05em;
+    padding-top: 1vh;
+    width: 35vw;
+}
+
+.Details_Logos {
+    display: flex;
+    padding-top: 7vh;
+}
+
+.Details_Logo {
+    padding-left: 2vw;
+}
+
+.Banner {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: black;
+
+    position: absolute;
+    top: -100vh;
+}
+
+.Animation {
+    z-index: 2;
+    animation: banneranim 4s forwards;
+    overflow: hidden;
+}
+
+@keyframes banneranim {
+    0% {
+        top: -100vh;
+        overflow: hidden;
+    }
+
+    100% {
+        top: 0;
+        overflow: hidden;
+    }
+}
+
+.AntiPodcastAnimation {
+    z-index: 2;
+    animation: antibanneranim 4s forwards;
+    overflow: hidden;
+}
+
+@keyframes antibanneranim {
+    100% {
+        top: -100vh;
+        overflow: hidden;
+    }
+
+    0% {
+        top: 0;
+        overflow: hidden;
+    }
+}
+
+.AntiAnimation {
+    z-index: 2;
+    animation: antibanneranim 4s forwards;
+}
+
+@keyframes antibanneranim {
+    100% {
+        top: -100vh;
+    }
+
+    0% {
+        top: 0;
+    }
+}
+
+.podcastContainer {
+    background-image: url(./assets/PodcastBackground.png);
+    width: 100vw;
+    height: 100vh;
+}
+
+.podcastContainer__Cross {
+    position: absolute;
+    z-index: 2;
+    left: 96vw;
+    top: 2vh;
+}
+
+.JOSMlogo {
+    height: 18vh;
+    width: 19vh;
+    animation: logoRotate 15s infinite forwards;
+}
+
+@keyframes logoRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.podcastFlex {
+    padding: 4.6vh;
+
+}
+
+.FlexLeft_BigText {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 8.2vh;
+    color: #FFFFFF;
+    width: 26vw;
+    height: 43vh;
+}
+
+.podcastFlex__FlexLeft {
+    display: flex;
+    justify-content: space-between;
+    height: 90vh;
+    width: 26vw;
+    flex-direction: column;
+}
+
+.FlexRight__TopBox {
+    width: 41.2vw;
+    height: 23vh;
+    border: 1px solid #FFFFFF;
+    border-bottom-left-radius: 290vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 4.2vh;
+}
+
+.podcastFlex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.TopBox_Content {
+    float: right;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.4vh;
+    text-align: right;
+}
+
+.RalewayBold {
+    font-weight: 600;
+}
+
+.FlexRight__Platforms {
+    width: 21vw;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.podcastFlex__FlexRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 90vh;
+}
+
+.FlexRight__Notif {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 5.7vh;
+    text-align: end;
+}
+
+.AboutAnimation {
+    z-index: 2;
+    animation: banneranim 4s forwards;
+}
+
+@keyframes banneranim {
+    0% {
+        top: -100vh;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes circleanim {
+    0% {
+        width: 3vh;
+        height: 3vh;
+        text-align: center;
+    }
+
+    100% {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+.AboutContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.AboutFlex {
+    padding: 2.74vw;
+    display: flex;
+    overflow: hidden;
+}
+
+.AboutFlex__Photo {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FFFFFF;
+    width: 24vw;
+    height: 90vh;
+    border-radius: 0 188.812px 0 0;
+    background-image: url(../src/assets/photo.jpg);
+    background-position: 25% 50%;
+    background-size: 200%;
+}
+
+.AboutFlex__Middle {
+    display: flex;
+    width: 31vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Middle__BlankSpace {
+    height: 36vh;
+    width: 31vw;
+}
+
+.Middle__Description {
+    width: 22vw;
+    font-family: 'Raleway';
+    font-style: normal;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.SkillsAndAwards__LowerShape {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FFFFFF;
+    width: 19vw;
+    height: 54.5vh;
+    position: absolute;
+    top: 45vh;
+    border-radius: 0 188.812px 0 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Raleway';
+    font-style: normal;
+}
+.LowerShape__Skills{
+    padding-left: 2vw;
+    padding-top: 2vh;
+}
+.AboutFlex__Awards{
+    font-family: 'Raleway';
+    font-style: normal;
+    text-align: right;
+    align-self: flex-end;   
+    position: absolute;
+    right: 2.7vw;
+   
+}
+.LowerShape__BlankSpace{
+    width: 38vh;
+    height: 38vh;
+}
+.SkillsAndAwards__UpperShape {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FFFFFF;
+    width: 19vw;
+    height: 76vh;
+    position: absolute;
+    z-index: 2;
+    top: -7vh;
+    left: 67vw;
+    border-radius: 0 0 0 188.812px;
+}
+.AboutFlex__SkillsAndAwards{
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+         
+}
+.podcastContainer__LargeText{
+    position: absolute;
+    font-size: 12vh;
+    z-index: 3;
+font-family: 'Playfair Display';
+font-style: italic;
+font-weight: 800;
+left:19vw;
+top:21vh;
 }
